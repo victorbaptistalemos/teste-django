@@ -1,6 +1,6 @@
 language: python
+os: linux
 dist: focal
-sudo: true
 
 python:
   - 3.8.6
