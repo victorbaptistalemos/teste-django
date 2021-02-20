@@ -1,0 +1,1 @@
+web: gunicorn vbl_teste_django.wsgi --log-file -
