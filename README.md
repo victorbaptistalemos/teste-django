@@ -1,8 +1,10 @@
 # teste-django
 
 Referência curso: Módulo Django do curso [Python Pro](https://python.pro.br)
+
 Referência GitHub: [github.com/pythonprobr/curso-django](https://github.com/pythonprobr/curso-django)
 
+Aplicação disponível em: [vbl-teste-django.herokuapps.com](https://vbl-teste-django.herokuapps.com/)
 
 Integração Travis-CI:
     [![Build Status](https://travis-ci.com/victorbaptistalemos/teste-django.svg?branch=main)](https://travis-ci.com/victorbaptistalemos/teste-django)
