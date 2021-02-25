@@ -9,8 +9,7 @@ services:
   - postgresql
 
 addons:
-  postgresql: '13.0'
-
+  postgresql: '9.5'
 env:
   global:
     - PIPENV_VENV_IN_PROJECT=1
