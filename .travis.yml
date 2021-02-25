@@ -5,6 +5,9 @@ dist: focal
 python:
   - 3.8.6
 
+services:
+  - postgresql
+
 env:
   global:
     - PIPENV_VENV_IN_PROJECT=1
@@ -15,6 +18,10 @@ install:
   - pip install codecov
   - pipenv sync -d
   - cp contrib/env-sample .env
+
+before_script:
+  - sudo systemctl restart postgresql
+  - psql -U postgres -c 'CREATE DATABASE testdb;'
 
 script:
   - pipenv run flake8 .
