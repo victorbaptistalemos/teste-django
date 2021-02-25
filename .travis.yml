@@ -8,13 +8,6 @@ python:
 services:
   - postgresql
 
-addons:
-  postgresql: '12'
-  apt:
-    packages:
-    - postgresql-12
-    - postgresql-client-12
-
 env:
   global:
     - PIPENV_VENV_IN_PROJECT=1
@@ -28,7 +21,7 @@ install:
   - cp contrib/env-sample .env
 
 before_script:
-  - psql -c 'CREATE DATABASE testdb;' -U postgres
+  - psql -U postgres -c 'CREATE DATABASE testdb;'
 
 script:
   - pipenv run flake8 .
