@@ -9,14 +9,20 @@ services:
   - postgresql
 
 addons:
-  postgresql: '12.6'
+  postgresql: '12'
+  apt:
+    packages:
+    - postgresql-12
+    - postgresql-client-12
+
 env:
   global:
     - PIPENV_VENV_IN_PROJECT=1
     - PIPENV_IGNORE_VIRTUALENVS=1
+    - PGPORT=5433
 
 before_script:
-  - psql -c "CREATE DATABASE testdb;" -U postgres
+  - psql -c 'CREATE DATABASE testdb;' -U postgres
 
 install:
   - pip install pipenv
