@@ -12,7 +12,6 @@ env:
   global:
     - PIPENV_VENV_IN_PROJECT=1
     - PIPENV_IGNORE_VIRTUALENVS=1
-    - PGPORT=5433
 
 install:
   - pip install pipenv
@@ -21,6 +20,7 @@ install:
   - cp contrib/env-sample .env
 
 before_script:
+  - sudo systemctl restart postgresql
   - psql -U postgres -c 'CREATE DATABASE testdb;'
 
 script:
